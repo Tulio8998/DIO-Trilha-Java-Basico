@@ -33,7 +33,7 @@ public class ContaTerminal {
 							int numeroNovoUsuario = in.nextInt();
 							in.nextLine();
 						System.out.println("Olá " + nomeNovoUsuario + ", obrigado por criar uma conta em nosso "
-								+ "banco, sua agência é" + agenciaNovoUsuario + ", conta "+ numeroNovoUsuario + " e seu saldo " + saldo + " já está disponível para saque.");
+								+ "banco, sua agência é " + agenciaNovoUsuario + ", conta "+ numeroNovoUsuario + " e seu saldo " + saldo + " já está disponível para saque.");
 						obj.contaUsuario(nomeNovoUsuario, agenciaNovoUsuario, numeroNovoUsuario);
 						System.out.println();
 						break;

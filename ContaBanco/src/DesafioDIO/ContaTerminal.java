@@ -53,9 +53,9 @@ public class ContaTerminal {
 						boolean verifica = obj.verificaContaUsuario(nomeUsuario, agenciaUsuario, numeroUsuario);
 						System.out.println();
 						
-						if (verifica) {
-							System.out.println("Login bem-sucedido!");
-		                    System.out.println();
+							if (verifica) {
+								System.out.println("Login bem-sucedido!");
+			                       			System.out.println();
 							
 								Boolean autenticacao2 = false;
 								while (!autenticacao2) {
@@ -109,10 +109,10 @@ public class ContaTerminal {
 										break;		
 									}
 								}
-						} else {
-							System.out.println("Usuario não encontrado");
-							System.out.println();
-						}
+							} else {
+								System.out.println("Usuario não encontrado");
+								System.out.println();
+							}
 						} else {
 							System.out.println("Valor invalido");
 							System.out.println();

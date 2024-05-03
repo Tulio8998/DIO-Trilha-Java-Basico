@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ContaTerminal {
 	
-
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		Boolean autenticacao1 = false;
@@ -30,12 +29,17 @@ public class ContaTerminal {
 						System.out.print("Informe o numero da Agencia (***-*): ");
 							String agenciaNovoUsuario = in.nextLine();
 						System.out.print("Informer o numero do usuario (****): ");
-							int numeroNovoUsuario = in.nextInt();
-							in.nextLine();
-						System.out.println("Olá " + nomeNovoUsuario + ", obrigado por criar uma conta em nosso "
-								+ "banco, sua agência é " + agenciaNovoUsuario + ", conta "+ numeroNovoUsuario + " e seu saldo " + saldoInicial + " já está disponível para saque.");
-						obj.contaUsuario(nomeNovoUsuario, agenciaNovoUsuario, numeroNovoUsuario);
-						System.out.println();
+						if (in.hasNextInt()) {
+								int numeroNovoUsuario = in.nextInt();
+								in.nextLine();
+							System.out.println("Olá " + nomeNovoUsuario + ", obrigado por criar uma conta em nosso "
+									+ "banco, sua agência é " + agenciaNovoUsuario + ", conta "+ numeroNovoUsuario + " e seu saldo " + saldoInicial + " já está disponível para saque.");
+							obj.contaUsuario(nomeNovoUsuario, agenciaNovoUsuario, numeroNovoUsuario);
+							System.out.println();
+						} else {
+							System.out.println("Valor invalido");
+							System.out.println();
+						}
 						break;
 					case "2":
 						System.out.print("Informe seu nome: ");
@@ -43,6 +47,7 @@ public class ContaTerminal {
 						System.out.print("Informe o numero da Agencia (***-*): ");
 							String agenciaUsuario = in.nextLine();
 						System.out.print("Informer o numero do usuario (****): ");
+						if (in.hasNextInt() ) {
 							int numeroUsuario = in.nextInt();
 							in.nextLine();
 						boolean verifica = obj.verificaContaUsuario(nomeUsuario, agenciaUsuario, numeroUsuario);
@@ -66,18 +71,30 @@ public class ContaTerminal {
 									switch (opcao2) {
 										case "1":
 											System.out.print("Valor que deseja adicionar: R$");
-												double adicionarValor = in.nextDouble();
-												in.nextLine();
-												obj.valorAdicionado(adicionarValor);
-												System.out.println();
+												if (in.hasNextDouble()) {
+													double adicionarValor = in.nextDouble();
+													in.nextLine();
+													obj.valorAdicionado(adicionarValor);
+													System.out.println();
+												} else {
+													in.nextLine();
+													System.out.println("Valor invalido");
+													System.out.println();
+												}
 											break;
 										case "2":
 											System.out.print("Valor que deseja retirar: R$");
-												double retirarValor = in.nextDouble();
-												in.nextLine();
-												obj.valorRetirado(retirarValor);
-												System.out.println();
-												break;
+												if (in.hasNextDouble()) {
+													double retirarValor = in.nextDouble();
+													in.nextLine();
+													obj.valorRetirado(retirarValor);
+													System.out.println();
+												} else {
+													in.nextLine();
+													System.out.println("Valor invalido");
+													System.out.println();
+												}
+											break;
 										case "3":
 											double saldo = obj.saldoFinal();
 											System.out.println("Saldo: R$" + saldo);
@@ -94,6 +111,10 @@ public class ContaTerminal {
 								}
 						} else {
 							System.out.println("Usuario não encontrado");
+							System.out.println();
+						}
+						} else {
+							System.out.println("Valor invalido");
 							System.out.println();
 						}
 							break;

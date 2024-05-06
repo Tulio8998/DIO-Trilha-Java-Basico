@@ -1,2 +1,3 @@
 # DIO-Trilha-Java-Basico
-Desafio da DIO, do curso Java Básico, em criar um simulador de uma conta bancária.
+Desafio DIO, do curso Java Básico. 
+O desafio foi criar um simulador de uma conta bancária.
